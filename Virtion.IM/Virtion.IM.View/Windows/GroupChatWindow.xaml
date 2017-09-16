@@ -1,0 +1,55 @@
+﻿<Window
+    x:Class="Virtion.IM.View.Windows.GroupChatWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             Height="550" 
+             Width="700"
+             Loaded="Window_Loaded"
+             Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel
+            Grid.Column="0">
+            
+            <ScrollViewer  
+                x:Name="SP_Scrollviewer"
+               Height="350">
+                <StackPanel x:Name="ChatContainer" 
+                            Background="#33000000"/>
+            </ScrollViewer>
+            
+            <Grid>
+                <TextBox 
+                     x:Name="TB_InputMessage"
+                    Height="122"  
+                    HorizontalAlignment="Stretch"
+                    AcceptsReturn="False"
+                    TextWrapping="Wrap"
+                    VerticalAlignment="Top"   
+                    Margin="10,0,0,0"   
+                    KeyDown="TB_InputMessage_KeyDown"
+                    />
+                <Button 
+                    x:Name="B_SendMessage" 
+                    Content="发射！噔~"
+                    HorizontalAlignment="Left"    
+                    VerticalAlignment="Top" 
+                    Width="75"   
+                    Height="25"
+                    Click="B_SendMessage_Click"
+                    Margin="10,139,0,0" 
+                    Style="{DynamicResource BaseButtonStyle}"
+                  />   
+            </Grid>
+            
+        </StackPanel>
+        <StackPanel x:Name="SP_MenberList"
+            Grid.Column="1"
+            />
+    </Grid>
+</Window>

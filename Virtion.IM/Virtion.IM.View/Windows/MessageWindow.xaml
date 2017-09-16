@@ -1,0 +1,68 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+        xmlns:control="clr-namespace:Virtion.IM.View.Control"
+        x:Class="Virtion.IM.View.Windows.MessageWindow"
+        Title="MessageWindow" 
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        Loaded="Window_Loaded"
+        Style="{DynamicResource ShadowWindowStyle}"
+        >
+    <StackPanel >
+        <Grid x:Name="G_Title"
+			Background="#AA000000"
+			Height="80" Width="400">
+            <TextBlock Foreground="White" 
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				FontSize="25" 
+				Text="Alert"/>
+        </Grid>
+
+        <Grid x:Name="MessageContent"       
+			Height="100" Width="400"
+        >
+            <Grid.Effect>
+                <DropShadowEffect Color="Black"
+					BlurRadius="10"
+					ShadowDepth="0"/>
+            </Grid.Effect>
+            <TextBlock Foreground="White" 
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				FontSize="18" 
+				Text="确认退出？"/>
+        </Grid>
+
+        <Grid   
+			Height="80" Width="400"
+			Background="#AA000000"
+           >
+            <control:CircleButton 
+                x:Name="CB_Ok"
+                Height="50"  Width="50"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Margin="100 0 0 0"
+                MouseDown="CB_Ok_MouseDown"
+                ImageBackground="/GalTalk;component/Resource/ok.png"
+                />
+            
+            <control:CircleButton
+                x:Name="CB_Close"
+				Height="50"  Width="50"
+                Margin="0 0 100 0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                MouseDown="CB_Close_MouseDown"
+                ImageBackground="/GalTalk;component/Resource/close.png"
+                />
+        </Grid>
+
+    </StackPanel>
+</Window>

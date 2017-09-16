@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Virtion.IM.Controls.BaseTextBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="50" 
+             d:DesignWidth="300">
+    <Grid>
+        
+        <TextBox x:Name="TB_Text" 
+             BorderBrush="Black"
+             BorderThickness="2"     
+             FontFamily="Microsoft YaHei" 
+             GotFocus="TB_Text_GotFocus"
+             LostFocus="TB_Text_LostFocus"
+            >
+            <TextBox.Triggers>
+                <EventTrigger   RoutedEvent="UIElement.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+											Storyboard.TargetName="TB_Text"
+											Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+											From="#505050" To="#41fffb" Duration="0:0:1" 
+											/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger   RoutedEvent="UIElement.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+											Storyboard.TargetName="TB_Text"
+											Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+											From="#41fffb" To="#505050" Duration="0:0:1" 
+											/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+
+            </TextBox.Triggers>
+        </TextBox>     
+            
+        <TextBlock x:Name="TB_HideText" 
+                   Margin="5" 
+                   IsHitTestVisible="False"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="Virtion.IM.View.Windows.UserInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ShowInTaskbar="False"
+        Title="UserInfoWindow" 
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None" 
+        Width="340" Height="300"
+        Loaded="Window_Loaded"
+        >
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+
+        <Path Grid.Column="1"
+              Data="M240,80 L320,120 240,160 z"
+              HorizontalAlignment="Left"
+              Height="40" Width="40"
+              Stretch="Fill" 
+              Fill="#AA000000" 
+              VerticalAlignment="Top"
+              Margin="0 20 0 0"/>
+
+        <Grid
+            Background="#AA000000">
+            <Border  x:Name="I_Avator" 
+             Grid.RowSpan="2"    
+                CornerRadius="90000"
+                Height="100" Width="100"     
+                 >
+                <Border.Background>
+                    <ImageBrush ImageSource="/GalTalk;component/Resource/avatar.jpg"/>
+                </Border.Background>
+            </Border>
+        </Grid>
+
+        <Grid.Effect>
+            <DropShadowEffect Color="Black"
+                              ShadowDepth="0"
+                             BlurRadius="20"/>
+        </Grid.Effect>
+
+    </Grid>
+</Window>

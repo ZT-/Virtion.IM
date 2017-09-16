@@ -1,0 +1,86 @@
+﻿<Window x:Class="Virtion.IM.View.Windows.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RegisterWindow" Height="400" Width="380">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="NameText"
+            Grid.Column="1"   Grid.Row="0"
+                 Height="23" Width="120"/>
+        <TextBox  x:Name="PasswordText"
+            Grid.Column="1"     Grid.Row="1"
+                 Height="23" Width="120"/>
+        <TextBox x:Name="ConfirmText"
+            Grid.Column="1"   Grid.Row="2"
+                 Height="23" Width="120"/>
+        <TextBox x:Name="NickNameText"
+            Grid.Column="1"   Grid.Row="3"
+                 Height="23" Width="120"/>
+        <TextBox x:Name="TelphoneText"
+            Grid.Column="1"    Grid.Row="4"
+                 Height="23" Width="120"/>
+
+        <TextBlock  Text="用户名" 
+                    Margin="20,15"
+                    Grid.Row="0"      />
+        <TextBlock Text="密码" 
+                    Margin="20,15"
+                    Grid.Row="1"/>
+        <TextBlock Text="确认密码"
+                    Margin="20,15"
+                    Grid.Row="2"/>
+        <TextBlock Text="昵称"
+                    Margin="20,15"
+                    Grid.Row="3"/>
+        <TextBlock Text="电话" 
+                    Margin="20,15"
+                     Grid.Row="4"/>
+        <TextBlock Text="性别" 
+                    Margin="20,15"
+                     Grid.Row="5"/>
+        
+        <RadioButton x:Name="ManRadio"
+            Content="男" 
+                      Margin="40,15"
+                     Grid.Row="5"  Grid.Column="1" />
+        <RadioButton 
+            Content="女"  
+                      Margin="100,15"
+                     Grid.Row="5"  Grid.Column="1" />
+
+        <Button x:Name="OkButton" Content="登录" 
+            Grid.Row="6"  Grid.Column="0"
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Left"
+            Margin="50,0,0,0" 
+            Height="30"   Width="75" Click="OkButton_Click" />
+        <Button x:Name="CancelButtton"
+            Content="取消"  
+            Grid.Row="6"   Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="150,0,0,0"  
+            Height="30"   Width="75" Click="CancelButtton_Click"/>
+        
+        <TextBlock x:Name="MessageText" 
+            Grid.Row="7"  Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="20,15"
+             />
+        
+    </Grid>
+</Window>

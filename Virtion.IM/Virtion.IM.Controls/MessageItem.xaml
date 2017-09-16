@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Virtion.IM.View.Control.MessageItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:control="clr-namespace:Virtion.IM.View.Control"
+             mc:Ignorable="d" 
+             d:DesignWidth="300" >
+
+    <Grid  x:Name="G_Container"
+        Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="50"/>
+        </Grid.ColumnDefinitions>
+        <Ellipse  x:Name="E_Avatar"
+                Grid.Column="3"
+                VerticalAlignment="Top"
+                Width="50"
+                Height="50"
+                Stroke="Black"
+                >
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/GalTalk;component/Resource/avatar.jpg"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <control:MessageContainer 
+            x:Name="MC_Message"/>
+    </Grid>
+
+</UserControl>
